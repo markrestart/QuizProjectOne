@@ -1,0 +1,65 @@
+<!--
+Created by the awe inspiring Mark Lindemulder.
+This file was created for DIG 3480, Project One.
+
+Version 0.1 - 8/31/2015
+Goals: I intend for this to run a ten question quiz with some manor of scoring that outputs a result in the form of a number to the user. Core quiz funtionality will be run from internal javascript. 
+Questions can be loaded from a JSON file and extra code can be loaded from .js files referenced in that JSON.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<!--Set up the variables I'm going to use.-->
+<script>
+	var answers = [];
+</script>
+
+<title>HTML Tutorial</title>
+<!--Put all the CSS styling here. I'll get to this eventually.-->
+<style>
+body {
+    background-color: linen;
+}
+</style>
+
+</head>
+<body>
+<h1>This is a heading</h1>
+<!--This is where most of the computing is going to be handled. The big problem here is managing the balance between costumability and modularity.
+Possible solution, external js files to add -->
+<script>
+
+function nextQuestion() {
+	document.getElementById("question").innerHTML = 
+
+    for (i = 0; i < options.length; i++) { 
+    text += cars[i] + "<br>";
+}
+	//Debugging line
+	document.getElementById("showIt").innerHTML = answers;
+}
+	
+function questionAnswered() {
+    answers.push(document.querySelector('input[name="choices"]:checked').value);
+	
+	//Debugging line
+	document.getElementById("showIt").innerHTML = answers;
+}
+</script>
+<!--Show the current question. Only one will be displayed at a time so question order can be modified by the back end. Also to allow space for some unorthadox question input methods. hehehe.-->
+<p id="question">
+Would you rather fight 1 horse sized duck or 100 duck sized horses?
+</p>
+<br>
+<p id="radioBoxes">
+<input type="radio" name="choices" value="horseSizedDuck">I wish to fight 1 horse sized duck.<br>
+<input type="radio" name="choices" value="duckSizedHorses">100 duck sized horses please.<br>
+</p>
+
+<button onclick="questionAnswered()">Final Answer</button>
+
+<!--Debugging paragraph-->
+<p id="showIt"></p>
+
+</body>
+</html>
